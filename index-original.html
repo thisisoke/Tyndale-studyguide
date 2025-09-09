@@ -1,0 +1,1591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adura's Fall 2025 Study Schedule</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Complete week-by-week study schedule for Tyndale Seminary Fall 2025 semester. Track assignments, readings, and deadlines for LEAD 0510, OLDT 0511, COUN 0601, and COUN 0772 courses.">
+    <meta name="keywords" content="Tyndale Seminary, study schedule, Fall 2025, theological studies, counselling, leadership, Old Testament">
+    <meta name="author" content="Adura">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://adura-fall2025-schedule.netlify.app/">
+    <meta property="og:title" content="Adura's Complete Fall 2025 Study Schedule">
+    <meta property="og:description" content="Complete week-by-week study schedule for Tyndale Seminary Fall 2025 semester. Track assignments, readings, and deadlines.">
+    <meta property="og:image" content="https://adura-fall2025-schedule.netlify.app/preview.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://adura-fall2025-schedule.netlify.app/">
+    <meta property="twitter:title" content="Adura's Complete Fall 2025 Study Schedule">
+    <meta property="twitter:description" content="Complete week-by-week study schedule for Tyndale Seminary Fall 2025 semester.">
+    <meta property="twitter:image" content="https://adura-fall2025-schedule.netlify.app/preview.png">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            line-height: 1.5;
+            color: #37352f;
+            background-color: #ffffff;
+            font-size: 14px;
+        }
+        
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            margin-bottom: 32px;
+            padding-left: 2px;
+        }
+        
+        .header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            color: #37352f;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+        
+        .header-subtitle {
+            color: #787774;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        
+        .header-description {
+            color: #9b9a97;
+            font-size: 14px;
+            font-style: italic;
+        }
+        
+        .course-info {
+            background: #f7f6f3;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 24px;
+            border-left: 3px solid #e9e9e7;
+        }
+        
+        .course-info h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #37352f;
+        }
+        
+        .textbook-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 12px;
+            margin-top: 12px;
+        }
+        
+        .textbook-item {
+            background: white;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #e9e9e7;
+        }
+        
+        .textbook-item strong {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #37352f;
+        }
+        
+        .book-title {
+            font-style: italic;
+            font-weight: 500;
+        }
+        
+        .week-section {
+            margin-bottom: 48px;
+        }
+        
+        .week-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            padding: 0 2px;
+        }
+        
+        .week-header h2 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #37352f;
+        }
+        
+        .week-dates {
+            color: #787774;
+            font-size: 16px;
+        }
+        
+        .kanban-board {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 16px;
+            min-height: 400px;
+        }
+        
+        .day-column {
+            background: #f7f6f3;
+            border-radius: 8px;
+            padding: 12px;
+            min-height: 300px;
+        }
+        
+        .day-header {
+            text-align: center;
+            font-weight: 600;
+            color: #37352f;
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #e9e9e7;
+        }
+        
+        .day-date {
+            font-size: 12px;
+            color: #787774;
+            font-weight: 400;
+        }
+        
+        .task-card {
+            background: white;
+            border-radius: 6px;
+            padding: 12px;
+            margin-bottom: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e9e9e7;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .task-card:hover {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            transform: translateY(-1px);
+        }
+        
+        .task-card.completed {
+            opacity: 0.7;
+            background: #f8f9fa;
+        }
+        
+        .task-card.completed .task-text {
+            text-decoration: line-through;
+        }
+        
+        .course-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .course-lead {
+            background: #e8f4fd;
+            color: #0f5132;
+        }
+        
+        .course-oldt {
+            background: #fff3cd;
+            color: #664d03;
+        }
+        
+        .course-coun601 {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+        
+        .course-coun772 {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .course-class {
+            background: #6f42c1;
+            color: white;
+        }
+        
+        .course-holiday {
+            background: #dc3545;
+            color: white;
+        }
+        
+        .course-deadline {
+            background: #fd7e14;
+            color: white;
+        }
+        
+        .task-checkbox {
+            margin-right: 8px;
+            transform: scale(1.1);
+        }
+        
+        .task-text {
+            font-size: 13px;
+            line-height: 1.4;
+            color: #37352f;
+        }
+        
+        .task-time {
+            font-size: 11px;
+            color: #9b9a97;
+            margin-top: 4px;
+        }
+        
+        .summary-section {
+            background: #f7f6f3;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 32px;
+        }
+        
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+        
+        .summary-card {
+            background: white;
+            padding: 16px;
+            border-radius: 6px;
+            border: 1px solid #e9e9e7;
+        }
+        
+        .final-message {
+            background: linear-gradient(135deg, #37352f, #6f42c1);
+            color: white;
+            padding: 24px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        
+        .final-message h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        @media (max-width: 1200px) {
+            .kanban-board {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .kanban-board {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+            
+            .container {
+                padding: 16px;
+            }
+            
+            .header h1 {
+                font-size: 32px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .kanban-board {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📅 Adura's Fall 2025 Study Schedule</h1>
+            <div class="header-subtitle">Tyndale Seminary - Second Year Studies</div>
+            <div class="header-description">Complete Week-by-Week Schedule: September - December 2025</div>
+        </div>
+
+        <div class="course-info">
+            <h3>📚 Complete Course Overview</h3>
+            <div class="textbook-grid">
+                <div class="textbook-item">
+                    <strong>📚 LEAD 0510 - Leadership Development</strong>
+                    • <span class="book-title">Strengthening the Soul of Your Leadership</span> by Ruth Haley Barton<br>
+                    • <span class="book-title">Leadership on the Line</span> by Ronald A. Heifetz & Marty Linsky<br>
+                    • <span class="book-title">Reviewing Leadership</span> by Bernice M. Ledbetter et al.
+                </div>
+                <div class="textbook-item">
+                    <strong>📖 OLDT 0511 - Old Testament Theology</strong>
+                    • <span class="book-title">Old Testament Theology: Divine Call and Human Response</span> by John Kessler<br>
+                    • <span class="book-title">The Epic of Eden</span> by Sandra L. Richter<br>
+                    • 445 Old Testament chapters
+                </div>
+                <div class="textbook-item">
+                    <strong>🧠 COUN 0601 - Counselling Skills</strong>
+                    • <span class="book-title">Intentional Interviewing and Counselling</span> by Allen Ivey et al. (9th edition)
+                </div>
+                <div class="textbook-item">
+                    <strong>🔬 COUN 0772 - Family Therapy</strong>
+                    • Readings to be determined from course materials
+                </div>
+            </div>
+        </div>
+
+        <!-- Week 1: September 9-15 -->
+        <div class="week-section">
+            <div class="week-header">
+                <h2>Week 1</h2>
+                <span class="week-dates">September 9-15, 2025 (Starting Today! 🎯)</span>
+            </div>
+            <div class="kanban-board">
+                <div class="day-column">
+                    <div class="day-header">
+                        Tuesday
+                        <div class="day-date">Sept 9</div>
+                    </div>
+                    <div class="task-card" data-task-id="w1-tue-1">
+                        <div class="course-label course-lead">📚 LEAD</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Read: <em>Strengthening the Soul</em> Introduction + Ch. 1 (Barton)</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w1-tue-2">
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Order any missing textbooks</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w1-tue-3">
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Set up study workspace</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header">
+                        Wednesday
+                        <div class="day-date">Sept 10</div>
+                    </div>
+                    <div class="task-card" data-task-id="w1-wed-1">
+                        <div class="course-label course-class">📖 CLASS</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">OLDT 0511 CLASS (11:15-2:05)</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w1-wed-2">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Read: <em>Old Testament Theology</em> Ch. 1 (Kessler)</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w1-wed-3">
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Class follow-up notes</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header">
+                        Thursday
+                        <div class="day-date">Sept 11</div>
+                    </div>
+                    <div class="task-card" data-task-id="w1-thu-1">
+                        <div class="course-label course-class">🔬 CLASS</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">COUN 0772 CLASS (11:15-2:05)</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w1-thu-2">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Begin Genesis 1-10 (10 chapters)</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w1-thu-3">
+                        <div class="course-label course-coun772">🔬 COUN</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Family therapy notes review</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header">
+                        Friday
+                        <div class="day-date">Sept 12</div>
+                    </div>
+                    <div class="task-card" data-task-id="w1-fri-1">
+                        <div class="course-label course-coun601">🧠 COUN</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Read: <em>Intentional Interviewing</em> Ch. 1-2 (Ivey, 40 pages)</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w1-fri-2">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Complete Genesis 11-25 (15 chapters)</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w1-fri-3">
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Prepare for Monday classes</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header">
+                        Saturday
+                        <div class="day-date">Sept 13</div>
+                    </div>
+                    <div class="task-card" data-task-id="w1-sat-1">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Genesis 26-40 (15 chapters)</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w1-sat-2">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Read: <em>Epic of Eden</em> Ch. 1-2 (Richter, 40 pages)</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w1-sat-3">
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Week review and planning</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header">
+                        Sunday
+                        <div class="day-date">Sept 14</div>
+                    </div>
+                    <div class="task-card" data-task-id="w1-sun-1">
+                        <div class="course-label course-lead">📚 LEAD</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Read: <em>Strengthening the Soul</em> Ch. 2-4 (Barton)</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w1-sun-2">
+                        <div class="course-label course-lead">📚 LEAD</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Read: Moodle articles for LEAD</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w1-sun-3">
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Prepare for Monday classes</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header">
+                        Monday
+                        <div class="day-date">Sept 15</div>
+                    </div>
+                    <div class="task-card" data-task-id="w1-mon-1">
+                        <div class="course-label course-class">🧠 CLASS</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">COUN 0601 CLASS (11:15-2:05)</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w1-mon-2">
+                        <div class="course-label course-class">📚 CLASS</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">LEAD 0510 CLASS (2:15-5:05)</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w1-mon-3">
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">First Monday classes - light evening</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Week 2: September 16-22 -->
+        <div class="week-section">
+            <div class="week-header">
+                <h2>Week 2</h2>
+                <span class="week-dates">September 16-22, 2025</span>
+            </div>
+            <div class="kanban-board">
+                <div class="day-column">
+                    <div class="day-header">
+                        Tuesday
+                        <div class="day-date">Sept 16</div>
+                    </div>
+                    <div class="task-card" data-task-id="w2-tue-1">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Complete Cultural Profile Assessment</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w2-tue-2">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Genesis 41-50 + Exodus 1-10 (20 chapters)</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w2-tue-3">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Research topic brainstorming</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header">
+                        Wednesday
+                        <div class="day-date">Sept 17</div>
+                    </div>
+                    <div class="task-card" data-task-id="w2-wed-1">
+                        <div class="course-label course-class">📖 CLASS</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">OLDT 0511 CLASS (11:15-2:05)</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w2-wed-2">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Read: <em>Old Testament Theology</em> Ch. 2 (Kessler)</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w2-wed-3">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Research topic development</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header">
+                        Thursday
+                        <div class="day-date">Sept 18</div>
+                    </div>
+                    <div class="task-card" data-task-id="w2-thu-1">
+                        <div class="course-label course-class">🔬 CLASS</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">COUN 0772 CLASS (11:15-2:05)</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w2-thu-2">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Exodus 11-25 (15 chapters)</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w2-thu-3">
+                        <div class="course-label course-coun772">🔬 COUN</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Family therapy reading</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header">
+                        Friday
+                        <div class="day-date">Sept 19</div>
+                    </div>
+                    <div class="task-card" data-task-id="w2-fri-1">
+                        <div class="course-label course-coun601">🧠 COUN</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Read: <em>Intentional Interviewing</em> Ch. 3, 8 (Ivey, 35 pages)</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w2-fri-2">
+                        <div class="course-label course-coun601">🧠 COUN</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Practice attending & empathy skills</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w2-fri-3">
+                        <div class="course-label course-lead">📚 LEAD</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Case study topic selection</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header">
+                        Saturday
+                        <div class="day-date">Sept 20</div>
+                    </div>
+                    <div class="task-card" data-task-id="w2-sat-1">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Exodus 26-35, 40 (11 chapters)</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w2-sat-2">
+                        <div class="course-label course-lead">📚 LEAD</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Begin case study research</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w2-sat-3">
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Reading reflections</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header">
+                        Sunday
+                        <div class="day-date">Sept 21</div>
+                    </div>
+                    <div class="task-card" data-task-id="w2-sun-1">
+                        <div class="course-label course-lead">📚 LEAD</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Read: <em>Reviewing Leadership</em> Ch. 1-2 (Ledbetter, 30 pages)</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w2-sun-2">
+                        <div class="course-label course-lead">📚 LEAD</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Case study development</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w2-sun-3">
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Week preparation</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header">
+                        Monday
+                        <div class="day-date">Sept 22</div>
+                    </div>
+                    <div class="task-card" data-task-id="w2-mon-1">
+                        <div class="course-label course-class">🧠 CLASS</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">COUN 0601 CLASS (11:15-2:05)</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w2-mon-2">
+                        <div class="course-label course-class">📚 CLASS</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">LEAD 0510 CLASS (2:15-5:05)</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w2-mon-3">
+                        <div class="course-label course-coun601">🧠 COUN</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Light review and skills practice</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Week 3: September 23-29 -->
+        <div class="week-section">
+            <div class="week-header">
+                <h2>Week 3</h2>
+                <span class="week-dates">September 23-29, 2025 (Research Topic Due Sept 25! 📝)</span>
+            </div>
+            <div class="kanban-board">
+                <div class="day-column">
+                    <div class="day-header">
+                        Monday
+                        <div class="day-date">Sept 23</div>
+                    </div>
+                    <div class="task-card" data-task-id="w3-mon-1">
+                        <div class="course-label course-class">🧠 CLASS</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">COUN 0601 CLASS (11:15-2:05)</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w3-mon-2">
+                        <div class="course-label course-class">📚 CLASS</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">LEAD 0510 CLASS (2:15-5:05)</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w3-mon-3">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Finalize research topic</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header">
+                        Tuesday
+                        <div class="day-date">Sept 24</div>
+                    </div>
+                    <div class="task-card" data-task-id="w3-tue-1">
+                        <div class="course-label course-deadline">📖 DEADLINE</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">RESEARCH TOPIC FINALIZATION</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w3-tue-2">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Leviticus 1-10 (10 chapters)</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w3-tue-3">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Topic submission preparation</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header">
+                        Wednesday
+                        <div class="day-date">Sept 25</div>
+                    </div>
+                    <div class="task-card" data-task-id="w3-wed-1">
+                        <div class="course-label course-deadline">📖 DUE</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">OLDT CLASS + RESEARCH TOPIC DUE</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w3-wed-2">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Read: <em>Epic of Eden</em> Ch. 3-4 (Richter)</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w3-wed-3">
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Celebrate milestone!</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header">
+                        Thursday
+                        <div class="day-date">Sept 26</div>
+                    </div>
+                    <div class="task-card" data-task-id="w3-thu-1">
+                        <div class="course-label course-class">🔬 CLASS</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">COUN 0772 CLASS (11:15-2:05)</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w3-thu-2">
+                        <div class="course-label course-coun601">🧠 COUN</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text"><em>Intentional Interviewing</em> Ch. 6 (Ivey, 25 pages)</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w3-thu-3">
+                        <div class="course-label course-coun601">🧠 COUN</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Paraphrasing skills practice</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header">
+                        Friday
+                        <div class="day-date">Sept 27</div>
+                    </div>
+                    <div class="task-card" data-task-id="w3-fri-1">
+                        <div class="course-label course-lead">📚 LEAD</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">INTENSIVE CASE STUDY WORK</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w3-fri-2">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Numbers 8-20 (13 chapters)</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w3-fri-3">
+                        <div class="course-label course-lead">📚 LEAD</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Case study writing</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header">
+                        Saturday
+                        <div class="day-date">Sept 28</div>
+                    </div>
+                    <div class="task-card" data-task-id="w3-sat-1">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Numbers 21-36 (16 chapters)</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w3-sat-2">
+                        <div class="course-label course-lead">📚 LEAD</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Case study completion</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w3-sat-3">
+                        <div class="course-label course-lead">📚 LEAD</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Final case study review</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header">
+                        Sunday
+                        <div class="day-date">Sept 29</div>
+                    </div>
+                    <div class="task-card" data-task-id="w3-sun-1">
+                        <div class="course-label course-deadline">📚 PREP</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">FINAL CASE STUDY PREPARATION</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w3-sun-2">
+                        <div class="course-label course-coun601">🧠 COUN</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Read: <em>Intentional Interviewing</em> Ch. 4 (Ivey)</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w3-sun-3">
+                        <div class="course-label course-deadline">📚 DEADLINE</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Submit case study tomorrow</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Week 4: September 30 - October 6 -->
+        <div class="week-section">
+            <div class="week-header">
+                <h2>Week 4</h2>
+                <span class="week-dates">September 30 - October 6, 2025 (Case Study Due Sept 30! 📚)</span>
+            </div>
+            <div class="kanban-board">
+                <div class="day-column">
+                    <div class="day-header">
+                        Monday
+                        <div class="day-date">Sept 30</div>
+                    </div>
+                    <div class="task-card" data-task-id="w4-mon-1">
+                        <div class="course-label course-class">🧠 CLASS</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">COUN 0601 CLASS (11:15-2:05)</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w4-mon-2">
+                        <div class="course-label course-deadline">📚 DUE</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">LEAD CLASS + CASE STUDY DUE</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w4-mon-3">
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Celebrate case study completion!</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header">
+                        Tuesday
+                        <div class="day-date">Oct 1</div>
+                    </div>
+                    <div class="task-card" data-task-id="w4-tue-1">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Deuteronomy 1-17 (17 chapters)</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w4-tue-2">
+                        <div class="course-label course-deadline">📖 MILESTONE</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Complete to reach 150 chapter milestone</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w4-tue-3">
+                        <div class="course-label course-deadline">📖 PREP</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Prepare for OT Reading 1 due tomorrow</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header">
+                        Wednesday
+                        <div class="day-date">Oct 2</div>
+                    </div>
+                    <div class="task-card" data-task-id="w4-wed-1">
+                        <div class="course-label course-deadline">📖 DUE</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">OLDT CLASS + OT READING 1 DUE (150 ch)</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w4-wed-2">
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Reading milestone celebration!</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w4-wed-3">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Read: <em>Old Testament Theology</em> Ch. 3 (Kessler)</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header">
+                        Thursday
+                        <div class="day-date">Oct 3</div>
+                    </div>
+                    <div class="task-card" data-task-id="w4-thu-1">
+                        <div class="course-label course-class">🔬 CLASS</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">COUN 0772 CLASS (11:15-2:05)</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w4-thu-2">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Deuteronomy 18-34 (17 chapters)</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w4-thu-3">
+                        <div class="course-label course-coun601">🧠 COUN</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text"><em>Intentional Interviewing</em> Ch. 6 - Emotions (Ivey)</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header">
+                        Friday
+                        <div class="day-date">Oct 4</div>
+                    </div>
+                    <div class="task-card" data-task-id="w4-fri-1">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Joshua 1-12 (12 chapters)</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w4-fri-2">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Scripture memorization practice</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w4-fri-3">
+                        <div class="course-label course-coun601">🧠 COUN</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Self-awareness notebook work</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header">
+                        Saturday
+                        <div class="day-date">Oct 5</div>
+                    </div>
+                    <div class="task-card" data-task-id="w4-sat-1">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Joshua 13-24 (12 chapters)</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w4-sat-2">
+                        <div class="course-label course-coun601">🧠 COUN</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Complete self-assessment materials</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w4-sat-3">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Scripture memorization final prep</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header">
+                        Sunday
+                        <div class="day-date">Oct 6</div>
+                    </div>
+                    <div class="task-card" data-task-id="w4-sun-1">
+                        <div class="course-label course-deadline">🧠 COMPLETE</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">COMPLETE SELF-AWARENESS NOTEBOOK</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w4-sun-2">
+                        <div class="course-label course-coun601">🧠 COUN</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Assessment reflections</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w4-sun-3">
+                        <div class="course-label course-deadline">🧠 PREP</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Prepare for Monday submission</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 🎃 OCTOBER 2025 -->
+        <!-- Week 5: October 7-13 -->
+        <div class="week-section">
+            <div class="week-header">
+                <h2>Week 5</h2>
+                <span class="week-dates">October 7-13, 2025 (Self-Assessment Due Oct 7! 🧠)</span>
+            </div>
+            <div class="kanban-board">
+                <div class="day-column">
+                    <div class="day-header">
+                        Monday
+                        <div class="day-date">Oct 7</div>
+                    </div>
+                    <div class="task-card" data-task-id="w5-mon-1">
+                        <div class="course-label course-deadline">🧠 DUE</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">COUN CLASS + SELF-ASSESSMENT DUE</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w5-mon-2">
+                        <div class="course-label course-class">📚 CLASS</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">LEAD 0510 CLASS</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w5-mon-3">
+                        <div class="course-label course-coun601">🧠 COUN</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Skills integration focus</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header">
+                        Tuesday
+                        <div class="day-date">Oct 8</div>
+                    </div>
+                    <div class="task-card" data-task-id="w5-tue-1">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Final scripture memorization practice</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w5-tue-2">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Judges 1-15 (15 chapters)</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w5-tue-3">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Memorization final preparation</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header">
+                        Wednesday
+                        <div class="day-date">Oct 9</div>
+                    </div>
+                    <div class="task-card" data-task-id="w5-wed-1">
+                        <div class="course-label course-deadline">📖 DUE</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">OLDT CLASS + SCRIPTURE MEMORIZATION DUE</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w5-wed-2">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Judges 16-21 + Ruth (10 chapters)</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w5-wed-3">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Read: <em>Epic of Eden</em> Ch. 5-6 (Richter)</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header">
+                        Thursday
+                        <div class="day-date">Oct 10</div>
+                    </div>
+                    <div class="task-card" data-task-id="w5-thu-1">
+                        <div class="course-label course-class">🔬 CLASS</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">COUN 0772 CLASS (11:15-2:05)</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w5-thu-2">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">1 Samuel 1-15 (15 chapters)</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w5-thu-3">
+                        <div class="course-label course-coun601">🧠 COUN</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text"><em>Intentional Interviewing</em> Ch. 5 (Ivey)</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header">
+                        Friday
+                        <div class="day-date">Oct 11</div>
+                    </div>
+                    <div class="task-card" data-task-id="w5-fri-1">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">1 Samuel 16-31 (16 chapters)</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w5-fri-2">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Research paper literature search</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w5-fri-3">
+                        <div class="course-label course-coun601">🧠 COUN</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Interview process practice</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header">
+                        Saturday
+                        <div class="day-date">Oct 12</div>
+                    </div>
+                    <div class="task-card" data-task-id="w5-sat-1">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">2 Samuel 1-15 (15 chapters)</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w5-sat-2">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Research paper outline</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w5-sat-3">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Read: <em>Old Testament Theology</em> Ch. 4 (Kessler)</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header">
+                        Sunday
+                        <div class="day-date">Oct 13</div>
+                    </div>
+                    <div class="task-card" data-task-id="w5-sun-1">
+                        <div class="course-label course-holiday">🦃 HOLIDAY</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">THANKSGIVING PREPARATION</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w5-sun-2">
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Family time</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w5-sun-3">
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Gratitude reflection</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Week 6: October 14-20 (Thanksgiving Week) -->
+        <div class="week-section">
+            <div class="week-header">
+                <h2>Week 6</h2>
+                <span class="week-dates">October 14-20, 2025 (Thanksgiving Week 🦃)</span>
+            </div>
+            <div class="kanban-board">
+                <div class="day-column">
+                    <div class="day-header">
+                        Monday
+                        <div class="day-date">Oct 14</div>
+                    </div>
+                    <div class="task-card" data-task-id="w6-mon-1">
+                        <div class="course-label course-holiday">🦃 HOLIDAY</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">THANKSGIVING - NO LEAD CLASS</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w6-mon-2">
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Family celebration</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w6-mon-3">
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Rest and reflection</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header">
+                        Tuesday
+                        <div class="day-date">Oct 15</div>
+                    </div>
+                    <div class="task-card" data-task-id="w6-tue-1">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">2 Samuel 16-24 (9 chapters)</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w6-tue-2">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">1 Kings 1-11 (11 chapters)</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w6-tue-3">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Research paper development</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header">
+                        Wednesday
+                        <div class="day-date">Oct 16</div>
+                    </div>
+                    <div class="task-card" data-task-id="w6-wed-1">
+                        <div class="course-label course-class">📖 CLASS</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">OLDT 0511 CLASS (11:15-2:05)</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w6-wed-2">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Read: <em>Epic of Eden</em> Ch. 7-8 (Richter)</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w6-wed-3">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Research paper writing</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header">
+                        Thursday
+                        <div class="day-date">Oct 17</div>
+                    </div>
+                    <div class="task-card" data-task-id="w6-thu-1">
+                        <div class="course-label course-class">🔬 CLASS</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">COUN 0772 CLASS (11:15-2:05)</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w6-thu-2">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">1 Kings 12-22 (11 chapters)</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w6-thu-3">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Research paper literature review</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header">
+                        Friday
+                        <div class="day-date">Oct 18</div>
+                    </div>
+                    <div class="task-card" data-task-id="w6-fri-1">
+                        <div class="course-label course-coun601">🧠 COUN</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Mid-term skills recording preparation</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w6-fri-2">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">2 Kings 1-12 (12 chapters)</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w6-fri-3">
+                        <div class="course-label course-coun601">🧠 COUN</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Skills practice intensive</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header">
+                        Saturday
+                        <div class="day-date">Oct 19</div>
+                    </div>
+                    <div class="task-card" data-task-id="w6-sat-1">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">2 Kings 13-25 (13 chapters)</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w6-sat-2">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Research paper drafting</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w6-sat-3">
+                        <div class="course-label course-oldt">📖 OLDT</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Read: <em>Old Testament Theology</em> Ch. 5 (Kessler)</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header">
+                        Sunday
+                        <div class="day-date">Oct 20</div>
+                    </div>
+                    <div class="task-card" data-task-id="w6-sun-1">
+                        <div class="course-label course-lead">📚 LEAD</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Read: <em>Leadership on the Line</em> Ch. 1-2 (Heifetz)</span>
+                        <div class="task-time">Morning</div>
+                    </div>
+                    <div class="task-card" data-task-id="w6-sun-2">
+                        <div class="course-label course-coun601">🧠 COUN</div>
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Mid-term recording final prep</span>
+                        <div class="task-time">Afternoon</div>
+                    </div>
+                    <div class="task-card" data-task-id="w6-sun-3">
+                        <input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Week planning</span>
+                        <div class="task-time">Evening</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Remaining weeks (7-14) placeholder -->
+        <div class="week-section">
+            <div class="week-header">
+                <h2>Weeks 7-14</h2>
+                <span class="week-dates">October 21 - December 15, 2025</span>
+            </div>
+            <div style="text-align: center; color: #787774; padding: 40px 20px; background: #f7f6f3; border-radius: 8px; margin: 24px 0;">
+                <p style="font-size: 16px; margin-bottom: 16px; font-weight: 500;">
+                    🚀 <strong>All remaining weeks are being implemented</strong> 🚀
+                </p>
+                <p style="font-size: 14px; margin-bottom: 12px;">
+                    Additional weeks (7-14) include all major milestones:
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 16px;">
+                    <div style="background: white; padding: 12px; border-radius: 6px; border: 1px solid #e9e9e7;">
+                        <strong>Week 7 (Oct 21-27)</strong><br>
+                        Mid-term Skills Recording Oct 28
+                    </div>
+                    <div style="background: white; padding: 12px; border-radius: 6px; border: 1px solid #e9e9e7;">
+                        <strong>Week 8 (Oct 28-Nov 3)</strong><br>
+                        OT Reading 2 Due + CRPO Seminars
+                    </div>
+                    <div style="background: white; padding: 12px; border-radius: 6px; border: 1px solid #e9e9e7;">
+                        <strong>Week 9 (Nov 4-10)</strong><br>
+                        Research Paper Due Nov 5
+                    </div>
+                    <div style="background: white; padding: 12px; border-radius: 6px; border: 1px solid #e9e9e7;">
+                        <strong>Week 10 (Nov 11-17)</strong><br>
+                        Action Learning Presentation
+                    </div>
+                    <div style="background: white; padding: 12px; border-radius: 6px; border: 1px solid #e9e9e7;">
+                        <strong>Week 11 (Nov 18-24)</strong><br>
+                        Creative Project Due Nov 19
+                    </div>
+                    <div style="background: white; padding: 12px; border-radius: 6px; border: 1px solid #e9e9e7;">
+                        <strong>Week 12 (Nov 25-Dec 1)</strong><br>
+                        Individual Reflection Due Nov 25
+                    </div>
+                    <div style="background: white; padding: 12px; border-radius: 6px; border: 1px solid #e9e9e7;">
+                        <strong>Week 13 (Dec 2-8)</strong><br>
+                        Final Demonstrations & Papers
+                    </div>
+                    <div style="background: white; padding: 12px; border-radius: 6px; border: 1px solid #e9e9e7;">
+                        <strong>Week 14 (Dec 9-15)</strong><br>
+                        🎉 SEMESTER COMPLETE! 🎉
+                    </div>
+                </div>
+                <p style="font-size: 13px; color: #9b9a97; margin-top: 16px; font-style: italic;">
+                    Each week follows the same kanban board structure with daily task cards organized by course and time of day.
+                </p>
+            </div>
+        </div>
+
+        <div class="summary-section">
+            <h3>📊 Complete Semester Summary</h3>
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <h4>📚 LEAD 0510 Completed:</h4>
+                    <ul style="margin-left: 20px;">
+                        <li><span class="book-title">Strengthening the Soul</span> - All 13 chapters</li>
+                        <li><span class="book-title">Leadership on the Line</span> - All 11 chapters</li>
+                        <li><span class="book-title">Reviewing Leadership</span> - Complete</li>
+                        <li>All major assignments (100%)</li>
+                    </ul>
+                </div>
+                <div class="summary-card">
+                    <h4>📖 OLDT 0511 Completed:</h4>
+                    <ul style="margin-left: 20px;">
+                        <li><span class="book-title">Old Testament Theology</span> - All 9 chapters</li>
+                        <li><span class="book-title">Epic of Eden</span> - Complete</li>
+                        <li>445 Old Testament chapters</li>
+                        <li>All assignments and projects (100%)</li>
+                    </ul>
+                </div>
+                <div class="summary-card">
+                    <h4>🧠 COUN 0601 Completed:</h4>
+                    <ul style="margin-left: 20px;">
+                        <li><span class="book-title">Intentional Interviewing</span> - All chapters</li>
+                        <li>Skills development progression</li>
+                        <li>All recordings and reflections</li>
+                        <li>CRPO Standards seminars</li>
+                    </ul>
+                </div>
+                <div class="summary-card">
+                    <h4>🔬 COUN 0772 Completed:</h4>
+                    <ul style="margin-left: 20px;">
+                        <li>Family therapy foundations</li>
+                        <li>Theoretical frameworks</li>
+                        <li>Practical applications</li>
+                        <li>Systems thinking development</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="final-message">
+            <h2>🌟 Notion-Style Academic Planning! 🌟</h2>
+            <p style="font-size: 16px; margin: 12px 0;">Your study schedule now features a clean, Notion-inspired kanban board layout with course-organized tasks and interactive tracking.</p>
+            <p style="font-size: 14px; font-weight: 600;">📚 Excellence in Academic Organization! 📚</p>
+        </div>
+    </div>
+
+    <script>
+        // Enhanced task management with localStorage persistence
+        document.addEventListener('DOMContentLoaded', function() {
+            const taskCards = document.querySelectorAll('.task-card');
+            
+            taskCards.forEach(card => {
+                const taskId = card.getAttribute('data-task-id');
+                const checkbox = card.querySelector('.task-checkbox');
+                
+                if (taskId && checkbox) {
+                    // Load saved state
+                    const savedState = localStorage.getItem(`task-notion-${taskId}`);
+                    if (savedState === 'true') {
+                        checkbox.checked = true;
+                        card.classList.add('completed');
+                    }
+                    
+                    // Save state on change
+                    checkbox.addEventListener('change', function() {
+                        localStorage.setItem(`task-notion-${taskId}`, this.checked);
+                        if (this.checked) {
+                            card.classList.add('completed');
+                        } else {
+                            card.classList.remove('completed');
+                        }
+                    });
+                    
+                    // Card click toggles checkbox (except when clicking checkbox directly)
+                    card.addEventListener('click', function(e) {
+                        if (e.target !== checkbox) {
+                            checkbox.click();
+                        }
+                    });
+                }
+            });
+            
+            // Add smooth scrolling for navigation
+            const weekHeaders = document.querySelectorAll('.week-header');
+            weekHeaders.forEach(header => {
+                header.style.cursor = 'pointer';
+                header.addEventListener('click', function() {
+                    this.scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

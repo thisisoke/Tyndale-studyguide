@@ -1,0 +1,27 @@
+{
+  "name": "adura-fall2025-schedule",
+  "version": "1.0.0",
+  "description": "Interactive study schedule for Tyndale Seminary Fall 2025 with Notion-like kanban board interface",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "@vitejs/plugin-react": "^4.0.0"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "keywords": [
+    "study-schedule",
+    "tyndale-seminary",
+    "kanban-board",
+    "academic-planning"
+  ],
+  "author": "Adura",
+  "license": "MIT"
+}
